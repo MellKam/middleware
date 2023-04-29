@@ -1,6 +1,4 @@
-Universal and lightweight middleware utility
-
-Introduction:
+# Introduction
 
 This TypeScript library provides a simple implementation of middleware pattern
 which can be used to wrap or augment functions with additional functionality
@@ -37,13 +35,13 @@ const mv: MiddlewareFn = (args, next) => {
   // BEFORE
   //
 
-  const result = next(req);
+  const result = next(args);
 
   //
   // AFTER
   //
 
-  return res;
+  return result;
 };
 ```
 
