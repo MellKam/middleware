@@ -1,19 +1,17 @@
+<div align="center" style="margin: 20px 0;">
 <img src="https://svgshare.com/i/sZt.svg" width="320px" />
-<br />
-
-This library provides a simple implementation of a middleware pattern that can
-be used to wrap or extend functions with additional functionality without
-changing their original implementation.
-
-<a href="https://bundlejs.com/?q=%40mellkam%2Fmiddleware">
-  <img src="https://deno.bundlejs.com/?q=@mellkam/middleware&badge=minified">
-</a>
+<p>This library provides a simple implementation of a middleware pattern that can be used to wrap or extend functions with additional functionality without changing their original implementation.</p>
+</div>
 
 # Installation
 
 ```bash
 npm install @mellkam/middleware
 ```
+
+<a href="https://bundlejs.com/?q=%40mellkam%2Fmiddleware">
+  <img src="https://deno.bundlejs.com/?q=@mellkam/middleware&badge=minified">
+</a>
 
 # Usage
 
