@@ -1,6 +1,6 @@
 {
   "name": "@mellkam/middleware",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "Universal and lightweight middleware utility",
   "repository": "https://github.com/MellKam/middleware",
@@ -8,6 +8,7 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
+  "readme": "https://github.com/MellKam/middleware#readme",
   "files": [
     "index.ts",
     "package.json",
