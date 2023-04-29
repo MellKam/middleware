@@ -1,5 +1,6 @@
-<div align="center" style="margin: 20px 0;">
-<img src="https://svgshare.com/i/sZt.svg" width="320px" />
+<div align="center">
+<h1><img src="https://svgshare.com/i/sZt.svg" width="320px" alt="@mellkam/middleware" /></h1>
+
 <p>This library provides a simple implementation of a middleware pattern that can be used to wrap or extend functions with additional functionality without changing their original implementation.</p>
 </div>
 
