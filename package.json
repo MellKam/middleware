@@ -1,0 +1,26 @@
+{
+  "name": "@mellkam/middleware",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "",
+  "repository": "https://github.com/MellKam/middleware",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "index.ts",
+    "package.json",
+    "LICENSE",
+    "dist/"
+  ],
+  "scripts": {
+    "build": "vite build && tsc"
+  },
+  "devDependencies": {
+    "tsx": "3.12.6",
+    "vite": "4.3.3",
+    "typescript": "5.0.4",
+    "@types/node": "18.16.2"
+  }
+}
