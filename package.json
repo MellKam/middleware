@@ -2,7 +2,7 @@
   "name": "@mellkam/middleware",
   "version": "0.1.0",
   "license": "MIT",
-  "description": "",
+  "description": "Universal and lightweight middleware utility",
   "repository": "https://github.com/MellKam/middleware",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -13,6 +13,10 @@
     "package.json",
     "LICENSE",
     "dist/"
+  ],
+  "keywords": [
+    "middleware",
+    "wrapper"
   ],
   "scripts": {
     "build": "vite build && tsc"

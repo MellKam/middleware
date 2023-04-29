@@ -1,20 +1,26 @@
-export type MiddlewareFn<TArgs extends any[], TReturn> = (
-  args: TArgs,
-  next: (...args: TArgs) => TReturn
-) => TReturn;
+export type MiddlewareFn<
+  TFn extends (...args: any[]) => any = (...args: any[]) => any
+> = (
+  args: Parameters<TFn>,
+  next: (...args: Parameters<TFn>) => ReturnType<TFn>
+) => ReturnType<TFn>;
 
-export type Middleware<TArgs extends any[], TReturn> = {
-  run: (...args: TArgs) => TReturn;
-  use: (middleware: MiddlewareFn<TArgs, TReturn>) => Middleware<TArgs, TReturn>;
+export type Middleware<
+  TFn extends (...args: any[]) => any = (...args: any[]) => any
+> = {
+  run: TFn;
+  use: (mv: MiddlewareFn<TFn>) => Middleware<TFn>;
 };
 
-export const middleware = <TArgs extends any[], TReturn>(
-  fn: (...args: TArgs) => TReturn
-): Middleware<TArgs, TReturn> => {
+export const middleware = <
+  TFn extends (...args: any[]) => any = (...args: any[]) => any
+>(
+  fn: TFn
+): Middleware<TFn> => {
   return {
     run: fn,
-    use: (mv: MiddlewareFn<TArgs, TReturn>): Middleware<TArgs, TReturn> => {
-      return middleware<TArgs, TReturn>((...args) => mv(args, fn));
+    use: (mv: MiddlewareFn<TFn>) => {
+      return middleware((...args: Parameters<TFn>) => mv(args, fn));
     },
-  };
+  } as Middleware<TFn>;
 };
