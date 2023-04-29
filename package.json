@@ -20,7 +20,9 @@
     "wrapper"
   ],
   "scripts": {
-    "build": "vite build && tsc"
+    "build": "vite build && tsc",
+    "examples": "tsx ./examples.ts",
+    "test": "tsx --test index.test.ts"
   },
   "devDependencies": {
     "tsx": "3.12.6",
