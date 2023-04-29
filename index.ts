@@ -1,26 +1,33 @@
-export type MiddlewareFn<
+export type Middleware<
   TFn extends (...args: any[]) => any = (...args: any[]) => any
 > = (
   args: Parameters<TFn>,
   next: (...args: Parameters<TFn>) => ReturnType<TFn>
 ) => ReturnType<TFn>;
 
-export type Middleware<
+export type MiddlewareWrapper<
   TFn extends (...args: any[]) => any = (...args: any[]) => any
 > = {
   run: TFn;
-  use: (mv: MiddlewareFn<TFn>) => Middleware<TFn>;
+  use: (mw: Middleware<TFn>) => MiddlewareWrapper<TFn>;
 };
 
-export const middleware = <
+/**
+ * Creates a middleware wrapper for a given function.
+ * The resulting wrapper can be used to apply middlewares to the original function.
+ *
+ * @param fn The function you want to wrap with middleware
+ * @returns A middleware wrapper object
+ */
+export const wrap = <
   TFn extends (...args: any[]) => any = (...args: any[]) => any
 >(
   fn: TFn
-): Middleware<TFn> => {
+): MiddlewareWrapper<TFn> => {
   return {
     run: fn,
-    use: (mv: MiddlewareFn<TFn>) => {
-      return middleware((...args: Parameters<TFn>) => mv(args, fn));
+    use: (mw: Middleware<TFn>) => {
+      return wrap((...args: Parameters<TFn>) => mw(args, fn));
     },
-  } as Middleware<TFn>;
+  } as MiddlewareWrapper<TFn>;
 };

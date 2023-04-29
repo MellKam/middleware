@@ -1,6 +1,6 @@
 {
   "name": "@mellkam/middleware",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Universal and lightweight middleware utility",
   "repository": "https://github.com/MellKam/middleware",
@@ -9,6 +9,10 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "readme": "https://github.com/MellKam/middleware#readme",
+  "author": {
+    "name": "Artem Melnyk",
+    "url": "https://github.com/MellKam"
+  },
   "files": [
     "index.ts",
     "package.json",
@@ -28,6 +32,6 @@
     "tsx": "3.12.6",
     "vite": "4.3.3",
     "typescript": "5.0.4",
-    "@types/node": "18.16.2"
+    "@types/node": "18.16.3"
   }
 }
