@@ -1,6 +1,6 @@
 {
   "name": "@mellkam/middleware",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
   "description": "Universal and lightweight middleware utility",
   "repository": "https://github.com/MellKam/middleware",
@@ -25,7 +25,6 @@
   ],
   "scripts": {
     "build": "vite build && tsc",
-    "examples": "tsx ./examples.ts",
     "test": "tsx --test index.test.ts"
   },
   "devDependencies": {

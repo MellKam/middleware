@@ -14,3 +14,14 @@ const timer: Middleware = (args, next) => {
 };
 
 console.log(wrap(fibonacci).use(timer).run(40));
+
+const createTimer = (label: string): Middleware => {
+  return (args, next) => {
+    console.time(label);
+    const result = next(...args);
+    console.timeEnd(label);
+    return result;
+  };
+};
+
+console.log(wrap(fibonacci).use(createTimer("fibonacci")).run(40));
